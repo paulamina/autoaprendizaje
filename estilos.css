@@ -1,3 +1,31 @@
-body {
-    background-color: aqua;
+#cabeceraweb {
+    background-color: tan
+}
+
+#navprincipal {
+    background-color: bisque;
+}
+
+#barralateral {
+    background-color: blanchedalmond;
+    float: left;
+    height: 780px;
+}
+
+#contenidoprincipal {
+    background-color: cornsilk;
+    margin-left: 210px;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+#pieprincipal { 
+    background-color: coral;
+    clear: both;
+    margin-top: 20px;
+}
+
+li { 
+    background-color: rgb(212, 104, 104);
+    display: inline;
 }
