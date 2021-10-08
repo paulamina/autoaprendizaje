@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Fundamenos JavaScript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        
+
+    </head>
+    <body>
+    
+        <script>
+
+        /* var hola= "Hola Mundo";
+        let hello= "Hello World";
+        console.log(hola);
+        console.log(hello);
+        console.log(window.hola);
+
+        var musica = "Rock";
+        console.log("Variable música antes del bloque", musica);
+
+        var musica= "Pop"  ;
+        console.log("Variable música después del bloque", musica);
+
+        const PI = 3.1416;
+
+        //cadenas de texto - strings 
+
+        let nombre = "Jon";
+        let apellido = "Mircha";
+        let saludo = new String("Hola Mundo");
+        let lorem = "Lorem ipsum, dolor sit amet consectetur adipsicing elit. Est, et dolorum. Adipisci sequi, voluptates acussamus earum magnam";
+        
+        console.log(nombre,apellido,saludo);
+
+        console.log(nombre.length,  //longitud
+        apellido.length,
+        nombre.toLowerCase, //todo mayúsculas
+        apellido.toUpperCase,  //todo minúsculas
+        lorem.includes("dolor"), //ver si incluye los caracteres
+        lorem.trim(), //quitar espacios en blanco
+        lorem.split(" "), //convertir cadena de texto a arreglo por cada espacio en blanco
+        )
+
+        //Interpolación de variables
+        //template string
+
+        let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`
+        console.log(saludo2);
+
+        
+        let a = 2;
+        let b = 1;
+        let c = 7.19;
+        let d = "5,6";
+
+        console.log(a,b);
+        console.log(c.toFixed(1)); //cuántos números decimales mostrar
+        console.log(parseInt(c)); //solo la parte entera
+        console.log(typeof d); //tipo de dato
+        console.log(c + parseInt(d)); 
+        
+
+        let verdadero = true;
+        let falso = false;
+        
+        console.log(verdadero,falso);
+        console.log(typeof verdadero);
+
+        console.log(Boolean(0)); // el cero tiende a falso
+        console.log(Boolean(-7)); // negativos tienden a verdadero
+        console.log(Boolean("")) // cadena de texto vacía tiende a falso
+        console.log(Boolean(" ")) // cadena llena aunque sea con un solo espacio tiende a verdadero
+
+        let indefinida; //variable a la que no se le ha asignado ningún valor
+        let nulo = null; //variable está vacía, pero se le ha asignado ese valor intencionalmente
+        let noEsNumero = "hola" * 3.7; //no es un número (not a number)
+
+        
+        // funciones
+        function estoEsUnaFuncion() {  //declaración
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+        }
+
+        estoEsUnaFuncion();  //invocación
+
+        function funcionDevuelve() {  //declaración de una función que retorna valores
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+            return "La función ha retornado una cadena de texto";
+        }
+
+        let valorFuncion = funcionDevuelve();
+        console.log(valorFuncion);
+
+
+        let name = "Paula";
+        let edad = 24;
+        function saludar() {
+            console.log(`Hola, mi nombre es ${name} y tengo ${edad} años.`);
+        }
+        
+        saludar("Kenai", 7);
+        saludar();
+
+        const funcionExpresada = function () {   //función expresada
+            console.log("Esto es una funcioón expresada, es decir, una función que se le ha asignado como valor a una variable, si invocamos esta función antes de su definición JS nos dirá...");
+        }
+
+        funcionExpresada(); 
+
+        //ARRAYS
+        const z = [];
+        const y = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]]
+        console.log(y);
+        console.log(y.length);   //longitud
+        console.log(y[2]);    //posición, inicia desde cero
+        console.log(y[3][1]);  //posición de un arreglo dentro de un arreglo
+        console.log(y[3][3][0]);   //posición de un arreglo dentro de un arreglo dentro de otro arreglo
+
+        const x = Array.of("x","y","z",9,8,7);            
+        console.log(x);
+
+        const llenar = Array(100).fill(false);
+        console.log(llenar);
+
+        const colores = ["Rojo", "Verde", "Azul"];
+        console.log(colores);
+
+        colores.push("Negro");   //Agregar un elemento al final del arreglo
+        colores.pop();     //quitar el último elemento del arreglo
+
+        colores.forEach(function (el,index) {     //ejecutar una función por cada elemento del arreglo  el=elemento / index=índice
+            console.log(`<li id="${index}">${el}</li>`);
+        })
+
+
+        //OBJETOS  Todo es un objeto, pueden tener cualquier tipo de dato
+        const obj = {}
+        console.log(obj);
+
+        const paula = {
+            nombre: "Paula",
+            apellido: "Mina",
+            edad: 24,
+            pasatiempos: ["cocinar", "maquillaje", "montar bici"],
+            soltera: false,
+            contacto: {
+                email: "paulamina9627@gmail.com",
+                twitter: "@elucubracioon",
+                movil: "573125672732",
+            },
+            saludar: function () {
+                console.log(`Hola :)`)
+            },
+            decirNombre: function () {
+                console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años.`)
+            }
+        }
+        /* dentro de un objeto a las variables se les va a llamar
+        atributos/propiedades y a las funciones métodos */
+
+        /*console.log(paula);
+        console.log(paula["nombre"]);
+        console.log(paula["apellido"]);
+        console.log(paula.pasatiempos[1]);
+        console.log(paula.contacto.twitter);
+        paula.saludar();
+        paula.decirNombre();
+
+        console.log(Object.keys(paula));     //me permite listar todas las llaves del objeto, forma una lista
+        console.log(Object.values(paula));         //me permite listar los valores que hacen parte del objeto
+        console.log(paula.hasOwnProperty("nombre"));    //averiguar si esa propiedad existe
+        
+
+        //Operadores aritméticos: + - * / % () primero lo de paréntesis, luego raices y potencias, multiplicaciones y divesiones, sumas y restas de izquierda a derecha
+
+        let ax = 5+(5-10)*8;
+        let modulo = 5%2;
+        console.log(ax);
+
+        //Relacionales >,<,>=,<=,==,===,!=,!==
+            //1 = es asignación de variable,  2 == es comparación de valores, 3 === es comparación de tipo de dato y de valor
+
+        console.log(8>9);
+        console.log(8>=9),
+        console.log(7<=7);
+
+        // Incremento y decremento 
+        let i = 3;
+        
+        i += 1;    //suma una cifra
+        console.log(i);
+
+        i++;   //operadores unarios
+        i--;
+        
+
+        //operadores lógicos  !-Not: Niega, verdadero se vuelve falso y viceversa     
+        //Or: cuando tengo 2 o más condiciones, con que una se cumpla, el OR validará   
+        //&&And
+        console.log(9===9)||("9"===9);       //si una se cumple, todas se cumplen
+        console.log(9===9)&&("9"===9);      //todas las condiciones deben cumplirse
+
+
+        //Estructuras de control y condicionales
+        //permiten controlar el flujo de tu programación 
+
+        // IF - ELSE
+
+        let edad1 = 17;
+        if(edad1 >= 18) {
+            console.log("Eres mayor de edad")
+        } else{
+            console.log("Eres menor de edad")
+        }
+
+        // IF - ELSE IF - ELSE
+
+        let hora = 5;
+        if (hora >= 0 && hora <= 5) {
+            console.log("Déjame dormir");
+        } else if (hora >= 6 && hora <= 11) {
+            console.log("Buenos días");
+        } else if (hora >= 12 && hora <= 18) {
+            console.log("Buenas tardes");
+        } else {
+            console.log("Déjame dormir");
+        }
+
+        // Operador Ternario 
+
+        let eresMayor = (edad1 >= 18)  //condición
+        ? "Eres mayor de edad"         //verdadera
+        : "Eres menor de edad"         //falsa
+        console.log(eresMayor);
+        
+
+        //switch - case
+
+        let dia = 2;
+
+        switch (dia) {
+            case 0:
+                console.log("Domingo");
+                break;
+            case 1:
+                console.log("Lunes");
+                break;
+            case 2:
+                console.log("Martes");
+                break;
+            case 3:
+                console.log("Miércoles");
+                break;
+            case 4:
+                console.log("Jueves");
+                break;
+            case 5:
+                console.log("Viernes");
+                break;
+            case 6:
+                console.log("Sábado");
+                break;
+            default:
+                console.log("El día no existe");
+                break;
+        } */
+
+        // Ciclos (loops)
+
+        //While (está en desuso)
+
+        let contador = 0;
+        while (contador > 10) {     //debe cumplirse la condición siempre para que se ejecute
+            console.log(contador);
+            contador++;
+        }
+
+        //do while (es aún más raro su uso)
+        do {     //siempre se ejecuta una vez y luego cuando la condición se cumple continúa o viceversa
+            console.log("do while" + contador);
+            contador++;
+        } while (contador < 10);
+
+
+        //FOR 
+        /* for (inicialización de la varibale; condición; decremento o incremento) {
+            sentencias que ejecuta el for
+            sentencias que ejecuta el for 
+        }*/
+
+        for (let i=0; i<10; i++){
+            console.log("for" + i);
+        }
+
+        let numeros = [10,20,30,40,50,60,70,80,90,100];
+
+        for (let i =0; i<numeros.lenght; i++) {
+            console.log(numeros[i]);
+        }
+
+        //Manejo de errores
+
+        /*try{
+            console.log("En el Try se agrega el código a evaluar")
+        } catch (error) {
+            console.log("Catch, captura cualquier error que surge o se lanza en el try")
+        } finally {
+            console.log("El bloque finally se ejecutará siempre al ginal de un bloque try-catch")
+        }*/
+
+        //Break and continue
+
+        /*const numeross = [1,2,3,4,5,6,7,8,9,0];
+
+        for(let i=0; i<numeross.length; i++){
+            if (i === 5) {
+                break;   //salir de la estructura de control
+            }
+            console.log(numeross[i]);            
+        }
+
+        for(let i=0; i<numeross.length; i++){
+            if (i === 5) {
+                continue;   //omitir que se ejecute el código que se encuentra en esa iteración
+            }
+            console.log(numeross[i]);            
+        }*/
+
+
+        //Sin destructuración
+        /*const numeros2 = [1,2,3]
+
+        let uno = numeros2[0];
+            dos = numeros2[1];
+            tres = numeros[2];
+
+        console.log(uno,dos,tres);
+
+        const persona = {
+            name: "Paula",
+            lastname: "Mina",
+            age: 35
+        }*/
+
+        //Destructuración 
+        /*const[one, two, three] = numeros;
+        console.log(one, two, three);
+
+        let{name,lastname,age}=persona;
+        console.log(name,lastname,age);*/
+
+
+        //Parámetros REST y operador Spread
+
+        /*function sumar (a,b,...c) {
+            let resultado = a+b;
+            c.forEach(function (n){
+                resultado +=n
+            })
+            return resultado;
+        }
+
+            console.log(sumar(1,2));
+            console.log(sumar(1,2,4));
+            console.log(sumar(1,2,5,7));
+
+        
+        const arr1 = [1,2,3,4,5],
+        arr2= [6,7,8,9,0];
+
+        console.log(arr1,arr2);
+
+        const arr3= [...arr1,...arr2];
+        console.log(arr3);*/
+
+
+        //Arrow functions
+
+        const saludar = () => {
+            console.log('Hola');
+        }
+
+        const saludar2 = nombre => console.log(`Hola ${nombre}`);
+        
+        saludar("Irma");
+        saludar2("Irma");
+
+
+
+        </script> 
+    </body>
+</html>
